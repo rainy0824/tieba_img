@@ -32,13 +32,13 @@ def get_pic(html):
                print("爬取图片完成")
               
 if __name__=="__main__":
-    get_url="https://tieba.baidu.com/p/2495300003"#贴吧地址
+    get_url="https://tieba.baidu.com/p/5100040604"#贴吧地址
     html=getHTMLText(get_url)#解析初始页面
     #获取当前有多少页
     pattern=re.compile(r'<li class="l_reply_num".*?<span class="red">(.*?)</span>')
     pagenum=pattern.search(html).group(1)#返回str类型
     num=int(pagenum)
-    print("页数："num)
+    print("页数：%s"%num)
     pg=0
     for i in range(1,num+1):
         pg+=1
